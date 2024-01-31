@@ -1,19 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/31 20:01:50 by aamirkha          #+#    #+#             */
-/*   Updated: 2024/01/31 23:56:36 by kali             ###   ########.fr       */
+/*   Created: 2024/01/31 21:24:57 by aamirkha          #+#    #+#             */
+/*   Updated: 2024/02/01 01:44:08 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
+#include "../includes/ft_printf.h"
 
-# include "../libft/libft.h"
-# include <stdarg.h>
+int ft_printf(char const *str, ...)
+{
+	int	plength;
+	va_list	arglist;
 
-#endif // LIBFTPRINTF_H
+	va_start(arglist, str);
+	plength = 0;
+	while (*str)
+	{
+		if (*str == '%')
+			plength += ft_parcer(*((str++) + 1), arglist);
+		else
+			plength += ft_putchar(*str);
+		str++;
+	}
+	va_end(arglist);
+	return (plength);
+}

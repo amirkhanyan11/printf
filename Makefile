@@ -13,6 +13,10 @@ LIBFT = $(LIBFTPATH)*.o
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -c
 
+GITCLONE = git clone
+TRIPOULLE = git@github.com:Tripouille/printfTester.git
+
+
 all : $(NAME)
 
 $(NAME) : $(LIBFT) $(OBJS)
@@ -24,6 +28,17 @@ $(LIBFT) :
 $(OBJSPATH)%.o : $(SRCSPATH)%.c
 	$(CC) $(CFLAGS) $< -o $@
 
+
+
+get_testers :
+	$(GITCLONE) $(TRIPOULLE) tripoulle-test
+
+delete_testers :
+	rm -rf ./tripoulle-test
+
+update_testers : delete_testers get_testers
+
+
 clean :
 	make --no-print-directory -C $(LIBFTPATH) clean
 	rm -f $(OBJS)
@@ -34,4 +49,4 @@ fclean : clean
 
 re : fclean all
 
-.PHONY : all clean fclean re
+.PHONY : all clean fclean re get_testers delete_testers update_testers
