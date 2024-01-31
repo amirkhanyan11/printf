@@ -6,7 +6,7 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 01:08:14 by kali              #+#    #+#             */
-/*   Updated: 2024/02/01 02:05:27 by kali             ###   ########.fr       */
+/*   Updated: 2024/02/01 02:26:05 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int main()
 {
-	ft_printf("%s %d %c\n", "my string!!", 2012, 't');
+	printf("%d", ft_printf("juj%d\n", INT_MIN) == printf("juj%d\n", INT_MIN));
 }

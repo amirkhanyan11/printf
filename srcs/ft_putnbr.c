@@ -6,7 +6,7 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 20:36:08 by aamirkha          #+#    #+#             */
-/*   Updated: 2024/02/01 02:10:52 by kali             ###   ########.fr       */
+/*   Updated: 2024/02/01 02:28:46 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,15 @@
 
 int	ft_putnbr(long long n)
 {
-	if (n < 0)
+	int	carry;
+
+	carry = (n < 0);
+	if (carry)
 	{
 		n *= -1;
 		ft_putchar('-');
 	}
 	if (n < 10)
 		return (ft_putchar(n + '0'));
-	return (ft_putnbr((n / 10)) + ft_putnbr((n % 10)));
+	return (ft_putnbr((n / 10)) + ft_putnbr((n % 10)) + carry);
 }
