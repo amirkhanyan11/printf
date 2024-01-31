@@ -23,6 +23,6 @@ int	ft_putnbr(long long n)
 		ft_putchar('-');
 	}
 	if (n < 10)
-		return (ft_putchar(n + '0'));
+		return (ft_putchar(n + '0') + carry);
 	return (ft_putnbr((n / 10)) + ft_putnbr((n % 10)) + carry);
 }
