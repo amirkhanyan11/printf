@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aamirkha <aamirkha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 21:24:57 by aamirkha          #+#    #+#             */
-/*   Updated: 2024/01/31 21:25:55 by aamirkha         ###   ########.fr       */
+/*   Updated: 2024/01/31 23:58:54 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 int main()
 {
-	printf("%zu\n", ft_strlen("hello"));
+	printf("%d\n", 9);
 	return 0;
 }
