@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aamirkha <aamirkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 01:08:14 by kali              #+#    #+#             */
-/*   Updated: 2024/02/01 02:26:05 by kali             ###   ########.fr       */
+/*   Updated: 2024/02/01 14:42:10 by aamirkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 int main()
 {
-	printf("%d", ft_printf("juj%d\n", INT_MIN) == printf("juj%d\n", INT_MIN));
+	printf("\n%d\n",  ft_printf("%s", NULL) == ft_printf("%s", NULL));
+	return 0;
 }

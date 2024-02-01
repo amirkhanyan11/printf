@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aamirkha <aamirkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 20:36:08 by aamirkha          #+#    #+#             */
-/*   Updated: 2024/02/01 02:11:31 by kali             ###   ########.fr       */
+/*   Updated: 2024/02/01 14:41:27 by aamirkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 int	ft_putstr(char *str)
 {
 	if (!str)
-		return 0;
+	{
+		return (write(1, "(null)", 6));
+	}
 	return (write(1, str, ft_strlen(str)));
 }
