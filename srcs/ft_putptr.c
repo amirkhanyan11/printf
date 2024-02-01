@@ -6,11 +6,11 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 17:01:15 by aamirkha          #+#    #+#             */
-/*   Updated: 2024/02/01 22:11:14 by kali             ###   ########.fr       */
+/*   Updated: 2024/02/02 02:49:21 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include <ft_printf.h>
 
 int	ft_putptr(unsigned long long const nbr, char const *const base)
 {

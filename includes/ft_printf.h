@@ -6,14 +6,14 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 20:01:50 by aamirkha          #+#    #+#             */
-/*   Updated: 2024/02/02 01:19:24 by kali             ###   ########.fr       */
+/*   Updated: 2024/02/02 03:07:27 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include "../libft/libft.h"
+# include <libft.h>
 # include <stdarg.h>
 
 typedef enum e_InputType

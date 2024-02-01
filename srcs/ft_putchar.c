@@ -6,11 +6,11 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 02:09:18 by kali              #+#    #+#             */
-/*   Updated: 2024/02/01 02:09:39 by kali             ###   ########.fr       */
+/*   Updated: 2024/02/02 02:49:19 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include <ft_printf.h>
 
 int	ft_putchar(char c)
 {

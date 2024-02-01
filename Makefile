@@ -2,17 +2,21 @@
 NAME = libftprintf.a
 SHARED = ./santa/libftprintf.so
 
+ROOT = ./
 SRCSPATH = ./srcs/
 OBJSPATH = ./objs/
+DEPPATH = ./dependencies/
 LIBFTPATH = ./libft/
-INCLUDES = ./includes/
+INCPATH = ./includes/ ./libft/
 
 SRCS = $(wildcard $(SRCSPATH)*.c)
 OBJS = $(patsubst $(SRCSPATH)%.c,$(OBJSPATH)%.o,$(SRCS))
+DEPS = $(patsubst $(OBJSPATH)%.o,$(DEPPATH)%.d,$(OBJS))
 LIBFT = $(LIBFTPATH)*.o
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -c
+DEPFLAGS = -MP -MD
+CFLAGS = -Wall -Wextra -Werror -c $(foreach H,$(INCPATH),-I$(H)) $(DEPFLAGS)
 
 GITCLONE = git clone
 TRIPOULLE = git@github.com:Tripouille/printfTester.git
@@ -25,7 +29,7 @@ $(NAME) : $(LIBFT) $(OBJS)
 	ar -rcs $(NAME) $(LIBFT) $(OBJS)
 
 $(LIBFT) :
-	make --no-print-directory -C $(LIBFTPATH) all
+	make -C $(LIBFTPATH) all
 
 so : $(NAME) $(SHARED)
 
@@ -36,6 +40,7 @@ $(SHARED) : $(OBJS) $(LIBFT)
 
 $(OBJSPATH)%.o : $(SRCSPATH)%.c
 	$(CC) $(CFLAGS) $< -o $@
+	mv $(OBJSPATH)*.d $(DEPPATH)
 
 gt :
 	$(GITCLONE) $(TRIPOULLE) ./tripoulle
@@ -48,11 +53,11 @@ ut : dt gt
 
 
 clean :
-	make --no-print-directory -C $(LIBFTPATH) clean
-	rm -f $(OBJS)
+	make -C $(LIBFTPATH) clean
+	rm -f $(OBJS) $(DEPS)
 
 fclean : clean
-	make --no-print-directory -C $(LIBFTPATH) fclean
+	make -C $(LIBFTPATH) fclean
 	rm -f $(NAME) $(SHARED)
 
 re : fclean all
