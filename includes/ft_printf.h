@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aamirkha <aamirkha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 20:01:50 by aamirkha          #+#    #+#             */
-/*   Updated: 2024/02/01 20:36:41 by aamirkha         ###   ########.fr       */
+/*   Updated: 2024/02/01 22:02:50 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int	ft_putnbr_signed(long long n);
 int	printnb(int nb, char const *const base);
 int	ft_putptr(unsigned long long const nbr, char const *const base);
 int	ft_input_handler(int const tmp, const char *const str);
+int ft_putptrprep(unsigned long long const ptr);
 
 //int	ft_putptr(unsigned long long const nbr, char const * const base);
 

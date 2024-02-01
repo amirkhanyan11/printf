@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parcer.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aamirkha <aamirkha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 20:36:08 by aamirkha          #+#    #+#             */
-/*   Updated: 2024/02/01 20:33:16 by aamirkha         ###   ########.fr       */
+/*   Updated: 2024/02/01 22:02:39 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ int	ft_parcer(char c, va_list arglist)
 	else if (c == 'u')
 		return (ft_putnbr(va_arg(arglist, int), "0123456789"));
 	else if (c == 'p')
-		return (ft_putstr("0x")
-			+ ft_putptr(va_arg(arglist, long long), "0123456789abcdef"));
+		return (ft_putptrprep(va_arg(arglist, long long)));
 	return (-1);
 }
-// ft_putstr("0x") + ft_putnbr(va_arg(arglist, int), "0123456789abcdef")
+// ft_putstr("0x")
+//	+ ft_putptr(va_arg(arglist, long long), "0123456789abcdef")

@@ -19,7 +19,7 @@ TRIPOULLE = git@github.com:Tripouille/printfTester.git
 SANTA = git@github.com:paulo-santana/ft_printf_tester.git
 
 
-all : so $(NAME)
+all : $(NAME)
 
 $(NAME) : $(LIBFT) $(OBJS)
 	ar -rcs $(NAME) $(LIBFT) $(OBJS)
@@ -37,13 +37,12 @@ $(SHARED) : $(OBJS) $(LIBFT)
 $(OBJSPATH)%.o : $(SRCSPATH)%.c
 	$(CC) $(CFLAGS) $< -o $@
 
-
 gt :
 	$(GITCLONE) $(TRIPOULLE) ./tripoulle
-	$(GITCLONE) $(SANTA) ../santa
+	$(GITCLONE) $(SANTA) ./santa
 
 dt :
-	rm -rf ./tripoulle ../santa
+	rm -rf ./tripoulle ./santa
 
 ut : dt gt
 
