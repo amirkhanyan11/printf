@@ -6,7 +6,7 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 20:36:08 by aamirkha          #+#    #+#             */
-/*   Updated: 2024/02/01 22:02:39 by kali             ###   ########.fr       */
+/*   Updated: 2024/02/01 22:11:10 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,3 @@ int	ft_parcer(char c, va_list arglist)
 		return (ft_putptrprep(va_arg(arglist, long long)));
 	return (-1);
 }
-// ft_putstr("0x")
-//	+ ft_putptr(va_arg(arglist, long long), "0123456789abcdef")
