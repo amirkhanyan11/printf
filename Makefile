@@ -1,5 +1,6 @@
 
 NAME = libftprintf.a
+SHARED = ./santa/libftprintf.so
 
 SRCSPATH = ./srcs/
 OBJSPATH = ./objs/
@@ -15,9 +16,10 @@ CFLAGS = -Wall -Wextra -Werror -c
 
 GITCLONE = git clone
 TRIPOULLE = git@github.com:Tripouille/printfTester.git
+SANTA = git@github.com:paulo-santana/ft_printf_tester.git
 
 
-all : $(NAME)
+all : so $(NAME)
 
 $(NAME) : $(LIBFT) $(OBJS)
 	ar -rcs $(NAME) $(LIBFT) $(OBJS)
@@ -25,18 +27,25 @@ $(NAME) : $(LIBFT) $(OBJS)
 $(LIBFT) :
 	make --no-print-directory -C $(LIBFTPATH) all
 
+so : $(NAME) $(SHARED)
+
+$(SHARED) : $(OBJS) $(LIBFT)
+
+	$(CC) -fPIC $(CFLAGS) $(SRCS)
+	gcc -shared -o $(SHARED) $(OBJS) $(LIBFT)
+
 $(OBJSPATH)%.o : $(SRCSPATH)%.c
 	$(CC) $(CFLAGS) $< -o $@
 
 
+gt :
+	$(GITCLONE) $(TRIPOULLE) ./tripoulle
+	$(GITCLONE) $(SANTA) ../santa
 
-get_testers :
-	$(GITCLONE) $(TRIPOULLE) tripoulle-test
+dt :
+	rm -rf ./tripoulle ../santa
 
-delete_testers :
-	rm -rf ./tripoulle-test
-
-update_testers : delete_testers get_testers
+ut : dt gt
 
 
 clean :
@@ -45,8 +54,8 @@ clean :
 
 fclean : clean
 	make --no-print-directory -C $(LIBFTPATH) fclean
-	rm -f $(NAME)
+	rm -f $(NAME) $(SHARED)
 
 re : fclean all
 
-.PHONY : all clean fclean re get_testers delete_testers update_testers
+.PHONY : all clean fclean re gt dt ut shared

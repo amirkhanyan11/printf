@@ -3,26 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aamirkha <aamirkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 20:36:08 by aamirkha          #+#    #+#             */
-/*   Updated: 2024/02/01 02:28:46 by kali             ###   ########.fr       */
+/*   Updated: 2024/02/01 17:37:43 by aamirkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int	ft_putnbr(long long n)
+int	printnb(int nb, char const * const base)
 {
-	int	carry;
+	return (write(1, base + nb, 1));
+}
 
-	carry = (n < 0);
-	if (carry)
-	{
-		n *= -1;
-		ft_putchar('-');
-	}
-	if (n < 10)
-		return (ft_putchar(n + '0') + carry);
-	return (ft_putnbr((n / 10)) + ft_putnbr((n % 10)) + carry);
+int	ft_putnbr(unsigned int const nbr, char const * const base)
+{
+	size_t	base_length;
+
+	base_length = ft_strlen(base);
+	if (nbr < base_length)
+		return (printnb(nbr, base));
+	return (ft_putnbr(nbr / base_length, base) + ft_putnbr(nbr % base_length, base));
+}
+
+int	ft_putnbr_signed(long long n)
+{
+	if (n < 0)
+		return (ft_putchar('-') + ft_putnbr(-n, "0123456789"));
+	return (ft_putnbr(n, "0123456789"));
 }

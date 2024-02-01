@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aamirkha <aamirkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 21:24:57 by aamirkha          #+#    #+#             */
-/*   Updated: 2024/02/01 02:15:48 by kali             ###   ########.fr       */
+/*   Updated: 2024/02/01 19:49:38 by aamirkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int ft_printf(char const *str, ...)
 {
 	int	plength;
+	int tmp;
 	va_list	arglist;
 
 	va_start(arglist, str);
@@ -22,7 +23,10 @@ int ft_printf(char const *str, ...)
 	while (*str)
 	{
 		if (*str == '%')
-			plength += ft_parcer(*((str++) + 1), arglist);
+		{
+			tmp = ft_parcer(*((str++) + 1), arglist);
+			plength += ft_InputHandler(tmp, str);
+		}
 		else
 			plength += ft_putchar(*(str));
 		str++;

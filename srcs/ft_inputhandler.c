@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_inputhandler.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aamirkha <aamirkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/01 01:08:14 by kali              #+#    #+#             */
-/*   Updated: 2024/02/01 19:43:27 by aamirkha         ###   ########.fr       */
+/*   Created: 2024/02/01 19:35:46 by aamirkha          #+#    #+#             */
+/*   Updated: 2024/02/01 19:50:28 by aamirkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int main()
+int	ft_InputHandler(int const tmp, const char * const str)
 {
-
-	ft_printf(" ft : %s \n", "");
-	printf("std : %s \n", "");
-	return 0;
+	if (tmp != InvalidInput)
+		return (tmp);
+	return (ft_putchar(*str));
 }

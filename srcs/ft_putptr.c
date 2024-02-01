@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aamirkha <aamirkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/01 01:08:14 by kali              #+#    #+#             */
-/*   Updated: 2024/02/01 19:43:27 by aamirkha         ###   ########.fr       */
+/*   Created: 2024/02/01 17:01:15 by aamirkha          #+#    #+#             */
+/*   Updated: 2024/02/01 18:00:54 by aamirkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int main()
+int	ft_putptr(unsigned long long const nbr, char const * const base)
 {
+	size_t	base_length;
 
-	ft_printf(" ft : %s \n", "");
-	printf("std : %s \n", "");
-	return 0;
+	base_length = ft_strlen(base);
+	if (nbr < base_length)
+		return (printnb(nbr, base));
+	return (ft_putptr(nbr / base_length, base) + ft_putptr(nbr % base_length, base));
 }
