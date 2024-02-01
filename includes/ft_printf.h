@@ -6,7 +6,7 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 20:01:50 by aamirkha          #+#    #+#             */
-/*   Updated: 2024/02/01 22:02:50 by kali             ###   ########.fr       */
+/*   Updated: 2024/02/02 01:19:24 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@
 
 typedef enum e_InputType
 {
-	InvalidInput = -1,
-	ValidInput = 0
+	InvalidInput = -1
 }	t_InputType;
 
 int	ft_printf(char const *str, ...);
@@ -31,8 +30,6 @@ int	ft_putnbr_signed(long long n);
 int	printnb(int nb, char const *const base);
 int	ft_putptr(unsigned long long const nbr, char const *const base);
 int	ft_input_handler(int const tmp, const char *const str);
-int ft_putptrprep(unsigned long long const ptr);
-
-//int	ft_putptr(unsigned long long const nbr, char const * const base);
+int	ft_putptrprep(unsigned long long const ptr);
 
 #endif // FT_PRINTF_H
