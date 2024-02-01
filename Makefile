@@ -63,3 +63,5 @@ fclean : clean
 re : fclean all
 
 .PHONY : all clean fclean re gt dt ut shared
+
+-include $(DEPS)
