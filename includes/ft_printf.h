@@ -6,7 +6,7 @@
 /*   By: aamirkha <aamirkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 20:01:50 by aamirkha          #+#    #+#             */
-/*   Updated: 2024/02/01 19:50:30 by aamirkha         ###   ########.fr       */
+/*   Updated: 2024/02/01 20:31:08 by aamirkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	ft_putnbr(unsigned int const nbr, char const * const base);
 int	ft_putnbr_signed(long long n);
 int	printnb(int nb, char const * const base);
 int	ft_putptr(unsigned long long const nbr, char const * const base);
-int	ft_InputHandler(int const tmp, const char * const str);
+int	ft_input_handler(int const tmp, const char * const str);
 
 //int	ft_putptr(unsigned long long const nbr, char const * const base);
 
