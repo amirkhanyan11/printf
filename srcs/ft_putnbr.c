@@ -3,19 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aamirkha <aamirkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 20:36:08 by aamirkha          #+#    #+#             */
-/*   Updated: 2024/02/02 02:49:20 by kali             ###   ########.fr       */
+/*   Updated: 2024/02/02 18:21:34 by aamirkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_printf.h>
-
-int	printnb(int nb, char const *const base)
-{
-	return (write(1, base + nb, 1));
-}
 
 int	ft_putnbr(unsigned int const nbr, char const *const base)
 {
@@ -23,7 +18,7 @@ int	ft_putnbr(unsigned int const nbr, char const *const base)
 
 	base_length = ft_strlen(base);
 	if (nbr < base_length)
-		return (printnb(nbr, base));
+		return (ft_putchar(base[nbr]));
 	return (ft_putnbr(nbr / base_length, base)
 		+ ft_putnbr(nbr % base_length, base));
 }

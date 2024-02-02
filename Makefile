@@ -34,8 +34,6 @@ $(LIBFT) :
 so : $(NAME) $(SHARED)
 
 $(SHARED) : $(OBJS) $(LIBFT)
-
-	$(CC) -fPIC $(CFLAGS) $(SRCS)
 	gcc -shared -o $(SHARED) $(OBJS) $(LIBFT)
 
 $(OBJSPATH)%.o : $(SRCSPATH)%.c
@@ -62,6 +60,6 @@ fclean : clean
 
 re : fclean all
 
-.PHONY : all clean fclean re gt dt ut shared
+.PHONY : all clean fclean re gt dt ut so
 
 -include $(DEPS)
