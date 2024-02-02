@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aamirkha <aamirkha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 20:36:08 by aamirkha          #+#    #+#             */
-/*   Updated: 2024/02/02 18:21:34 by aamirkha         ###   ########.fr       */
+/*   Updated: 2024/02/02 23:57:56 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int	ft_putnbr(unsigned int const nbr, char const *const base)
 	base_length = ft_strlen(base);
 	if (nbr < base_length)
 		return (ft_putchar(base[nbr]));
-	return (ft_putnbr(nbr / base_length, base)
-		+ ft_putnbr(nbr % base_length, base));
+	return (ft_putnbr(nbr / base_length, base) + ft_putnbr(nbr % base_length,
+			base));
 }
 
 int	ft_putnbr_signed(long long n)
